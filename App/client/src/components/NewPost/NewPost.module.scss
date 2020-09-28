@@ -1,0 +1,49 @@
+.post{
+  width: 30rem;
+  margin-bottom: 1rem;
+}
+
+.addPicture{
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  border: 2px dashed rgba(0,0,0,.125);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: rgba(0,0,0,.3);
+  font-weight: bold;
+  transition: all ease-in-out 0.2s;
+  &:hover{
+    border-color: #007bff!important;
+    color: #007bff!important;
+  }
+}
+
+.imageCard{
+  position: relative;
+  &:hover {
+    & > .replaceImage {
+      opacity: 1;
+    }
+  }
+}
+
+.replaceImage{
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: white;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.replaceImageActive {
+  opacity: 1;
+}
