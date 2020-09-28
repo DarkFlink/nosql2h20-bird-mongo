@@ -1,0 +1,17 @@
+.container{
+  margin-top: 2rem;
+  width: 30rem;
+}
+
+.achievementsRow{
+  display: flex;
+  justify-content: space-around;
+}
+
+.achievementIcon{
+  width: 3rem;
+}
+
+.achievementDisabled{
+  filter: grayscale(100%);
+}

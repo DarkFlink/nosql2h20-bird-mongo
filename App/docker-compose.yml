@@ -1,0 +1,19 @@
+version: "2"
+services:
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    container_name: docker-api
+  client:
+    build: ./client
+    ports:
+      - "5000:5000"
+    container_name: docker-client
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    container_name: docker-db

@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.userCard{
+  margin-top: 2rem;
+  width: 14rem;
+  margin-right: 1rem;
+  position: sticky!important;
+  top: 2rem;
+}
