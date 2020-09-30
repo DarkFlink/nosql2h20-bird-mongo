@@ -10,6 +10,7 @@ const SET_ERROR = `${moduleName}/SET_ERROR`;
 
 const initialState = {
   achievements: [],
+  statistics: {},
   error: '',
   isLoading: true
 };
@@ -23,7 +24,8 @@ export default (state = initialState, action) => {
       });
     case SET_ACHIEVEMENTS:
       return update(state, {
-        achievements: { $set: payload },
+        achievements: { $set: payload.achievements },
+        statistics: { $set: payload.statistics },
         isLoading: { $set: false }
       });
     case SET_ERROR:
@@ -38,6 +40,7 @@ export default (state = initialState, action) => {
 
 export const stateSelector = state => state[moduleName];
 export const achievementsSelector = createSelector(stateSelector, state => state.achievements);
+export const statisticsSelector = createSelector(stateSelector, state => state.statistics);
 export const errorFeedSelector = createSelector(stateSelector, state => state.error);
 export const isLoadingAchievementsSelector = createSelector(stateSelector, state => state.isLoading);
 
@@ -48,18 +51,24 @@ export const loadAchievements = (id, load = true) => (dispatch) => {
       type: LOAD_ACHIEVEMENTS
     });
     axios.get(`/users/${id}/achievements/`).then(
-      response => {
-        dispatch({
-          type: SET_ACHIEVEMENTS,
-          payload: response.data
-        });
-      },
-      error => {
-        dispatch({
-          type: SET_ERROR,
-          payload: error.response.data
-        });
-      }
+      achievementsResponse =>
+	axios.get(`/statistics/`).then(
+	      statisticsResponse => {
+		dispatch({
+		  type: SET_ACHIEVEMENTS,
+		  payload: {
+		    achievements: achievementsResponse.data,
+		    statistics: statisticsResponse.data,
+		  }
+		});
+	      },
+	      error => {
+		dispatch({
+		  type: SET_ERROR,
+		  payload: error.response.data
+		});
+	      }
+	    )
     )
   }
 };

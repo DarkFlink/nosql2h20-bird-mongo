@@ -14,17 +14,19 @@ const getAchievementsList = completedAchievements =>
   }))
 
 module.exports = (app) => {
-  app.post("/register", (req, res) => {
+  app.post("/register", async (req, res) => {
     const user = new User();
     const {isAdmin = false, login, password} = req.body;
 
+    const users = await User.find({});
+
     bcrypt.hash(password, 10, (err, hash) => {
-      user.isAdmin = isAdmin;
+      user.isAdmin = users.length > 0 ? isAdmin : true;
       user.login = login;
       user.password = hash;
       user.save( (err) => {
         if (err) {
-          res.send({
+          res.status(400).send({
             error: 'login already exists'
           })
         } else {

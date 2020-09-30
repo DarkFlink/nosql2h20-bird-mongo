@@ -12,8 +12,12 @@ import { connect } from 'react-redux';
 import {
   achievementsSelector,
   isLoadingAchievementsSelector,
-  loadAchievements
+  loadAchievements,
+  statisticsSelector
 } from "../../../redux/achievements/achievements";
+import {
+  userSelector
+} from "../../../redux/auth/auth";
 
 class Achievements extends React.PureComponent{
 
@@ -66,7 +70,7 @@ class Achievements extends React.PureComponent{
   };
 
   render() {
-    const { isLoading, achievements } = this.props;
+    const { isLoading, achievements, statistics, id, user } = this.props;
     return(
       <Card className={styles.container}>
         <Card.Body>
@@ -79,13 +83,33 @@ class Achievements extends React.PureComponent{
                 <Spinner animation="border" variant="primary" />
               </div>
               :
-              <div className={styles.achievementsRow}>
+              <div>
+		<div className={styles.achievementsRow}>
                 {
                   achievements
                     .sort((a, b) => b.completed - a.completed)
                     .map(achievement => this.renderAchievement(achievement))
                 }
-              </div>
+                </div>
+		{
+		  user._id === id &&
+		  <div style={{ display: 'flex', marginTop: '1rem', fontSize: '0.8rem' }}>
+		  <div>
+		    <div>Your achievements: <b>{statistics.achievements[0]} / {statistics.achievements[1]}</b></div>
+		    <div>Your posts: <b>{statistics.userPostsCount}</b></div>
+		    <div>Your comments: <b>{statistics.userCommentsCount}</b></div>
+		  </div>
+		  {
+		    user.isAdmin &&
+		    <div style={{ marginLeft: '0.5rem' }}>
+		      <div>Total posts: <b>{statistics.globalPosts}</b></div>
+		      <div>Total comments: <b>{statistics.globalComments}</b></div>
+		      <div>Total users: <b>{statistics.globalUsers}</b></div>
+		    </div>
+		  }
+		</div>
+		}
+	      </div>
           }
         </Card.Body>
       </Card>
@@ -94,7 +118,9 @@ class Achievements extends React.PureComponent{
 }
 
 export default connect(state => ({
+  user: userSelector(state),
   achievements: achievementsSelector(state),
+  statistics: statisticsSelector(state),
   isLoading: isLoadingAchievementsSelector(state)
 }), {
   loadAchievements
