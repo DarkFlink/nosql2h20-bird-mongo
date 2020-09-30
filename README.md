@@ -8,3 +8,4 @@
 1. Скачать репозиторий
 2. Внутри папки App открыть терминал
 3. sudo docker-compose up --build
+4. localhost:5000
