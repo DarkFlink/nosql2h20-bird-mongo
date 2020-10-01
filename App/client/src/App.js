@@ -84,7 +84,7 @@ class App extends React.PureComponent{
                     </Button>
                     <Button
                       onClick={this.exportJson}
-                      style={{ marginLeft: '1rem', marginRight: '1rem' }}
+                      style={{ marginLeft: '1rem' }}
                     >
                       Export
                     </Button>

@@ -20,17 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b90d88-ddb9-4533-99d9-08c66a001fe8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/adminRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/adminRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/usersRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/usersRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ImageUploader/ImageUploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ImageUploader/ImageUploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Statistics/Statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Statistics/Statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Statistics/Statistics.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Statistics/Statistics.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UserPage/Achievements/Achievements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UserPage/Achievements/Achievements.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,6 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -63,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601553173176</updated>
-      <workItem from="1601553174365" duration="3848000" />
+      <workItem from="1601553174365" duration="17275000" />
     </task>
     <servers />
   </component>
@@ -86,5 +99,9 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="209" y="24" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1601557439235" />
+    <state x="65" y="24" width="618" height="744" key="find.popup" timestamp="1601561925027">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="65" y="24" width="618" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1601561925027" />
   </component>
 </project>

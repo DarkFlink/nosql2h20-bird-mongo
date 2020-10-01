@@ -72,7 +72,7 @@ export default class ImageUploader extends React.PureComponent{
           style={{ display: 'none' }}
           type="file"
           id={`fileElem${uniqueString}`}
-          accept="image/*"
+          accept="image/x-png,image/gif,image/jpeg"
           onChange={this.onFileUpload}
         />
         <label
