@@ -1,4 +1,4 @@
-<span style="font-size:100;">0.8</span>
+# 0.8
 ### 17. ИС для бердвотчинга (MongoDB)
 
 * [x] [Use case](https://github.com/moevm/nosql2h20-bird-mongo/wiki/Use-case)
