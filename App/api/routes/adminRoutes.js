@@ -4,6 +4,7 @@ const Comment = require("../models/commentModel");
 const User = require("../models/userModel");
 const multer = require("multer");
 const mongoose = require("mongoose")
+const { startOfDay, endOfDay } = require("date-fns")
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
@@ -45,5 +46,45 @@ module.exports = app => {
     await Comment.insertMany(newDb.comments);
     res.send('database has been imported successfully');
   });
+
+  app.get('/admin/statistics', async (req, res) => {
+    try {
+      const { startDate = null, endDate = null, author = null } = req.query;
+      const posts = await Post.find({
+        createdAt: {
+          $gte: startDate ? startOfDay(startDate) : null,
+          $lte: endDate ? endOfDay(endDate) : null
+        },
+        author
+      });
+      const comments = await Comment.find({
+        createdAt: {
+          $gte: startDate ? startOfDay(startDate) : null,
+          $lte: endDate ? endOfDay(endDate) : null
+        },
+        author
+      });
+      return res.send({
+        postsCount: posts.length,
+        commentsCount: comments.length
+      })
+    } catch (err) {
+      res.status(400).send({
+        error: "error"
+      });
+    }
+  })
+
+  app.get('/admin/users', async (req, res) => {
+    try {
+      const { search = '' } = req.query;
+      const users = User.find({ login: { "$regex": search, "$options": "i" }});
+      return res.send(users);
+    } catch (err) {
+      res.status(400).send({
+        error: "error"
+      });
+    }
+  })
 
 }

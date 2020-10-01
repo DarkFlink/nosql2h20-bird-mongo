@@ -48,6 +48,11 @@ class App extends React.PureComponent{
       });
   };
 
+  toStatistics = () => {
+    const { history } = this.props;
+    history.push(`/statistics`);
+  };
+
   render() {
     const { user, logout, history } = this.props;
     return (
@@ -82,6 +87,12 @@ class App extends React.PureComponent{
                       style={{ marginLeft: '1rem', marginRight: '1rem' }}
                     >
                       Export
+                    </Button>
+                    <Button
+                      onClick={this.toStatistics}
+                      style={{ marginLeft: '1rem', marginRight: '1rem' }}
+                    >
+                      Statistics
                     </Button>
                   </>
               }

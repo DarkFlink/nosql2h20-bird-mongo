@@ -7,6 +7,7 @@ import {
 import styles from './Main.module.scss';
 import Feed from "../Feed/Feed";
 import UserPage from "../UserPage/UserPage";
+import Statistics from "../Statistics/Statistics";
 
 export default class Main extends React.PureComponent {
   render() {
@@ -20,6 +21,9 @@ export default class Main extends React.PureComponent {
           </Route>
           <Route path="/users/:userId" >
             <UserPage/>
+          </Route>
+          <Route path="/statistics" >
+            <Statistics/>
           </Route>
           <Route path="/" >
             <Redirect to={'/feed'}/>
