@@ -99,14 +99,6 @@ class Achievements extends React.PureComponent{
 		    <div>Your posts: <b>{statistics.userPostsCount}</b></div>
 		    <div>Your comments: <b>{statistics.userCommentsCount}</b></div>
 		  </div>
-		  {
-		    user.isAdmin &&
-		    <div style={{ marginLeft: '0.5rem' }}>
-		      <div>Total posts: <b>{statistics.globalPosts}</b></div>
-		      <div>Total comments: <b>{statistics.globalComments}</b></div>
-		      <div>Total users: <b>{statistics.globalUsers}</b></div>
-		    </div>
-		  }
 		</div>
 		}
 	      </div>

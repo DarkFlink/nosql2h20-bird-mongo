@@ -132,10 +132,6 @@ module.exports = (app) => {
     const comments = await Comment.find({ author: _id });
     const user = await User.findOne({ _id }).select('+achievements');
 
-    const globalPosts = await Post.find();
-    const globalComments = await Comment.find();
-    const globalUsers = await User.find();
-
     const commonStatistics = {
       userPostsCount: posts.length,
       userCommentsCount: comments.length,
@@ -145,17 +141,7 @@ module.exports = (app) => {
       ],
     }
 
-    const statistics =
-      isAdmin ?
-        {
-          ...commonStatistics,
-          globalPosts: globalPosts.length,
-          globalComments: globalComments.length,
-          globalUsers: globalUsers.length,
-        }
-        :
-        commonStatistics;
-    res.send(statistics);
+    res.send(commonStatistics);
 
   });
 
