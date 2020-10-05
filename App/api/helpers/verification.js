@@ -8,14 +8,14 @@ module.exports = (req, res, next) => {
   } else {
     const token = req.headers.token;
     if (!token) {
-      res.status(400).send({
+      res.status(401).send({
         error: 'no token provided'
       });
     }
     jwt.verify(token, jwtConfig.secret, (err, decoded) => {
       User.findOne({ _id: decoded._id }, (err, user) => {
         if (err) {
-          res.status(400).send({
+          res.status(401).send({
             error: 'invalid token'
           });
         }
