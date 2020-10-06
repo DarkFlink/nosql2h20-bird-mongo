@@ -86,7 +86,7 @@ module.exports = (app) => {
       async (err, post) => {
 
         try {
-          await deleteImage(post.image);
+          // await deleteImage(post.image);
           await Post.deleteOne({ _id: id, author: _id });
           await Comment.deleteMany({ post: id })
           res.send('OK')
