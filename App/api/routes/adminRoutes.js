@@ -22,11 +22,15 @@ module.exports = app => {
 
       try {
         await fs.mkdir(exportDir);
-      } catch (err) {}
+      } catch (err) {
+        res.status(400).send(err);
+      }
 
       try {
         await fs.writeFile('./exportTemp/birdwatching-db.json', JSON.stringify(json), 'utf8');
-      } catch (err) {}
+      } catch (err) {
+        res.status(400).send(err);
+      }
 
       res.download('./exportTemp/birdwatching-db.json');
 
